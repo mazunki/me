@@ -14,13 +14,15 @@
 \newcommand*{\github}[1]{\def\@github{#1}}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 \newcommand*{\website}[1]{\def\@website{#1}}
+\newcommand*{\jobtitle}[1]{\def\@jobtitle{#1}}
 
 \RequirePackage{titlesec}
 % Title + Name
 \RequirePackage{tabularx}
 \RequirePackage[hidelinks]{hyperref}
 \renewcommand{\maketitle}{%
-	{\Huge\@author}\\[0.3in]
+	{\Huge\@author}\\*[0.3in]
+	{\Huge\bfseries\hspace*{\parindent}\@jobtitle}\\[0.3in]
 	\begin{tabularx}{\textwidth}{X X r l r l}
 	& & mail: &\href{mailto:\@email}{\@email} &GitHub:  & \href{https://github.com/\@github}{\@github}\\[0.3em]
 	& & phone:&\href{tel:\@phone}{\@phone} &LinkedIn:& \href{https://linkedin.com/in/\@linkedin}{\@linkedin} \\[0.3em]
